@@ -1,24 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Philadelphia City Guide</title>
-    <meta name="description" content="Philadelphia City Guide — built on Replit. Update this description to reflect the app." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Philadelphia City Guide" />
-    <meta property="og:description" content="Philadelphia City Guide — built on Replit. Update this description to reflect the app." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Philadelphia City Guide" />
-    <meta name="twitter:description" content="Philadelphia City Guide — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A friendly first look at Philadelphia: its people, a proper cheesesteak, and a few things worth knowing.">
+    <meta name="theme-color" content="#f4efe4">
+    <title>Philadelphia, in a nutshell</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- The small header links visitors into the city guide. -->
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Philadelphia, in a nutshell — home">
+        <span class="wordmark-mark" aria-hidden="true">P</span>
+        <span>PHILADELPHIA<br><small>THE QUICK HELLO</small></span>
+      </a>
+      <a class="top-link" href="#quick-facts">Get to know the city <span aria-hidden="true">↓</span></a>
+    </header>
+
+    <main id="home">
+      <!-- Welcome message and a hand-built skyline illustration. -->
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A little local love</p>
+          <h1 id="page-title">A city with<br>room for <em>everyone.</em></h1>
+          <p class="intro-text">Big history, neighborhood heart, and a sandwich that needs two hands. Here’s your friendly first hello to Philadelphia.</p>
+          <a class="jump-link" href="#the-good-stuff">Take a look <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="intro-art" aria-hidden="true">
+          <div class="art-sun"></div>
+          <div class="art-skyline">
+            <span class="building b1"></span><span class="building b2"></span>
+            <span class="building b3"></span><span class="building b4"></span>
+            <span class="building b5"></span><span class="building b6"></span>
+            <span class="city-ground"></span>
+            <span class="art-caption">EST. 1682 · STILL GOING STRONG</span>
+          </div>
+          <span class="art-stamp">PHL<br><b>EST.</b><br>1682</span>
+        </div>
+      </section>
+
+      <!-- The three requested food, facts, and state-bird features. -->
+      <div class="section-rule" id="the-good-stuff">
+        <span>THE GOOD STUFF</span><span class="rule-dash"></span><span>01 — 03</span>
+      </div>
+
+      <section class="feature-grid" aria-label="A few things to know about Philadelphia">
+        <article class="feature food-feature">
+          <div class="feature-heading">
+            <p class="eyebrow">01 / A local classic</p>
+            <h2>Say hello<br>to the <em>cheesesteak.</em></h2>
+          </div>
+          <img class="food-image" src="./images/philadelphia-cheesesteak.jpg" alt="Philadelphia cheesesteak piled with thinly sliced steak and melted cheese in a toasted roll">
+          <div class="feature-note">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <p>Thin-sliced steak, melted cheese, and a long roll. Order it your way, then grab plenty of napkins.</p>
+          </div>
+        </article>
+
+        <article class="feature facts-feature" id="quick-facts">
+          <p class="eyebrow">02 / The short version</p>
+          <h2>Three things<br>to <em>know.</em></h2>
+          <ul class="facts-list">
+            <li><span class="fact-number">01</span><span><b>City nickname</b><br>“City of Brotherly Love”</span></li>
+            <li><span class="fact-number">02</span><span><b>Population</b><br>1,574,281 <span class="fact-detail">(2025 U.S. Census estimate)</span></span></li>
+            <li><span class="fact-number">03</span><span><b>Pennsylvania statehood</b><br>1787</span></li>
+          </ul>
+          <p class="source-line">Sources: <a href="https://www.census.gov/quickfacts/fact/table/philadelphiacitypennsylvania/PST045226" target="_blank" rel="noreferrer">U.S. Census QuickFacts</a> · <a href="https://www.senate.gov/states/PA/intro.htm" target="_blank" rel="noreferrer">U.S. Senate</a></p>
+        </article>
+
+        <article class="feature bird-feature">
+          <p class="eyebrow">03 / Feathered neighbor</p>
+          <h2>Our state bird:<br>the <em>ruffed grouse.</em></h2>
+          <p class="bird-copy">A shy woodland bird with a pretty unmistakable ruff. Tap or press enter to give it a little shake.</p>
+          <img class="bird" src="./images/pennsylvania-ruffed-grouse.jpg" alt="Ruffed grouse, Pennsylvania’s state bird, perched in a woodland setting" role="button" tabindex="0" aria-label="Make the ruffed grouse move">
+          <p class="source-line bird-source">Sources: <a href="https://www.pa.gov/agencies/pgc/wildlife/discover-pa-wildlife/ruffed-grouse" target="_blank" rel="noreferrer">Pennsylvania Game Commission</a></p>
+        </article>
+      </section>
+
+      <!-- Current city leader. -->
+      <section class="mayor-strip" aria-labelledby="mayor-title">
+        <div class="mayor-label">
+          <p class="eyebrow">Your city hall hello</p>
+          <h2 id="mayor-title">Meet the mayor.</h2>
+        </div>
+        <p class="mayor-name">Cherelle L. Parker</p>
+        <p class="mayor-role">Mayor of Philadelphia</p>
+        <a class="mayor-source" href="https://www.phila.gov/mayor" target="_blank" rel="noreferrer">Mayor’s Office <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <!-- This list lives only in the page while it is open. -->
+      <section class="likes-section" aria-labelledby="likes-title">
+        <div class="likes-intro">
+          <p class="eyebrow">Your turn</p>
+          <h2 id="likes-title">Things <em>I like.</em></h2>
+          <p>Make this little guide yours. Add a place, a taste, or a reason you love Philly.</p>
+        </div>
+        <form class="likes-form" id="likes-form">
+          <label for="like-input">One thing I like about Philadelphia</label>
+          <div class="input-row">
+            <input id="like-input" name="like" type="text" autocomplete="off" placeholder="A favorite corner, snack, or memory">
+            <button type="submit">Add <span aria-hidden="true">+</span></button>
+          </div>
+          <p class="form-hint" id="form-hint">Your list stays right here while this page is open.</p>
+          <ul class="likes-list" id="likes-list" aria-live="polite" aria-relevant="additions"></ul>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>MADE WITH A LITTLE PHILLY PRIDE</span>
+      <a href="#home">Back to the top ↑</a>
+    </footer>
   </body>
 </html>
