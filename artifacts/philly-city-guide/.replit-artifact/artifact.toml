@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Philadelphia City Guide"
+description = "A beginner-friendly, mobile-ready one-page guide to Philadelphia, featuring a local food favorite, quick facts, a current state leader, Pennsylvania's state bird, and an in-memory list of things visitors like about the city."
+version = "1.0.0"
+id = "artifacts/philly-city-guide"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24163
+
+[services.development]
+run = "pnpm --filter @workspace/philly-city-guide run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/philly-city-guide", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/philly-city-guide/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24163"
+BASE_PATH = "/"
